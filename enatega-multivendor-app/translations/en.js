@@ -114,6 +114,7 @@ export const en = {
   rateAndReview: 'Rate and Review',
   reviewPlaceholder: 'More detailed reviews get more visibility...',
   submit: 'Submit',
+  submitting: 'Submitting...',
   noWorriesText: 'No worries, let us help you out!',
   yourEmail: 'Your Email',
   send: 'Send',

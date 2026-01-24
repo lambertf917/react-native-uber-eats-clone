@@ -27,7 +27,7 @@ function Review({ onOverlayPress, theme, orderId, rating }, ref) {
 
   const ratingRef = useRef()
   const [description, setDescription] = useState('')
-  const [mutate] = useMutation(REVIEWORDER, { variables: { order: orderId, description, rating: ratingRef.current }, onCompleted, onError })
+  const [mutate, { loading: loadingMutation }] = useMutation(REVIEWORDER, { variables: { order: orderId, description, rating: ratingRef.current }, onCompleted, onError })
 
   function onCompleted() {
     setDescription('')
@@ -104,9 +104,9 @@ function Review({ onOverlayPress, theme, orderId, rating }, ref) {
             onChangeText={(text) => setDescription(text)}
             style={styles.modalInput(theme)}
           />
-          <Button text={t('submit')}
-            buttonProps={{ onPress: onSubmit }}
-            buttonStyles={{ borderRadius: 15, backgroundColor: theme.primary, margin: 10 }} textStyles={{ margin: 10, alignSelf: 'center' }}
+          <Button text={loadingMutation ? t('submitting') : t('submit')}
+            buttonProps={{ onPress: onSubmit, disabled: loadingMutation }}
+            buttonStyles={{ borderRadius: 15, backgroundColor: theme.primary, margin: 10, opacity: loadingMutation ? 0.5 : 1 }} textStyles={{ margin: 10, alignSelf: 'center' }}
             textProps={{ H4: true, bold: true, textColor: theme.black }}/>
         </View>}
       </View>
