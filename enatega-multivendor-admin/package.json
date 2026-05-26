@@ -63,7 +63,7 @@
     "nouislider": "13.1.1",
     "react": "^17.0.0",
     "react-chartjs-2": "^5.0.0",
-    "react-data-table-component": "^7.6.2",
+    "react-data-table-component": "^8.3.0",
     "react-datetime": "3.3.1",
     "react-dom": "^17.0.0",
     "react-i18next": "^11.0.0",
